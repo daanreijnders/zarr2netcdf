@@ -2,7 +2,7 @@
 
 ## Description
 
-`zarr2netcdf` is a utility that facilitates the conversion of `.zarr` stores to `.netcdf` files. It uses [xarray](https://github.com/pydata/xarray) and [dask](https://github.com/dask/dask) to handle the conversion. With optional flags, users can customize the output path and disable Dask processing if needed.
+`zarr2netcdf` is a utility that facilitates the conversion of `.zarr` stores to `.netcdf` files. This can be convenient for moving files over `scp`. It uses [xarray](https://github.com/pydata/xarray) and [dask](https://github.com/dask/dask) to handle the conversion. With optional flags, you can customize the output path and disable `dask` processing if needed. 
 
 ## Features
 
