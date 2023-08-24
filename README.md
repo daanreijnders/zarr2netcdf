@@ -13,11 +13,13 @@
 
 ## Installation
 
-Before using `zarr2netcdf`, ensure you have the required libraries installed:
+You can install zarr2netcdf.py as a command line tool using:
 
 ```bash
-pip install xarray zarr netCDF4 dask[complete]
+pip install .
 ```
+
+Requirements are `xarray zarr netCDF4 dask[complete]`.
 
 ## Usage
 
