@@ -2,7 +2,7 @@
 
 ## Description
 
-`zarr2netcdf` is a utility that facilitates the conversion of `.zarr` stores to `.netcdf` files. This can be convenient for moving files over `scp`. It uses [xarray](https://github.com/pydata/xarray) and [dask](https://github.com/dask/dask) to handle the conversion. With optional flags, you can customize the output path and disable `dask` processing if needed. 
+`zarr2netcdf` is a Python (command-line) utility that facilitates the conversion of `.zarr` stores to `netCDF` (`.nc`) files. This can be convenient for moving files over `scp`. It uses [xarray](https://github.com/pydata/xarray) and [dask](https://github.com/dask/dask) to handle the conversion. With optional flags, you can customize the output path and disable `dask` processing if needed. 
 
 ## Features
 
@@ -30,13 +30,13 @@ zarr2netcdf path_to_your_file.zarr
 ### Optional Arguments:
 
 - **Specify Output Path**:
-  Use the `--output` or `-o` flag to specify a custom path for the output `.netcdf` file:
+  Use the `--output` or `-o` flag to specify a custom path for the output `.nc` file:
 
   ```bash
   zarr2netcdf path_to_your_file.zarr --output path_to_output_file.netcdf
   ```
 
-  If not provided, the output will have the same name as the input with a `.netcdf` extension.
+  If not provided, the output will have the same name as the input with a `.nc` extension.
 
 - **Disable Dask Parallelization**:
   Use the `--disable_dask` or `-n` flag to disable `dask` parallelization and the progress bar:
