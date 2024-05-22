@@ -33,7 +33,7 @@ def zarr_to_netcdf(zarr_path, output_path=None, use_dask=False, verbose=False, e
         raise ValueError("The provided path does not have a .zarr extension.")
 
     if verbose:
-        print(f"Converting {zarr_path} to .netcdf")
+        print(f"Converting {zarr_path} to .nc")
     # Load the .zarr store into an xarray dataset
     if use_dask:
         ds = xr.open_zarr(zarr_path, chunks='auto')

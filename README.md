@@ -6,7 +6,7 @@
 
 ## Features
 
-- Convert `.zarr` stores to `.netcdf` format.
+- Convert `.zarr` stores to `.nc` (netCDF) format.
 - Efficient handling of large datasets using `dask`.
 - Optional progress bar for tracking the conversion process (only when `dask` is enabled).
 - Command-line interface and utility for easy integration into workflows.
@@ -21,7 +21,7 @@ pip install xarray zarr netCDF4 dask[complete]
 
 ## Usage
 
-To convert a `.zarr` store to a `.netcdf` file:
+To convert a `.zarr` store to a `.nc` (netCDF) file:
 
 ```bash
 zarr2netcdf path_to_your_file.zarr
@@ -29,18 +29,22 @@ zarr2netcdf path_to_your_file.zarr
 
 ### Optional Arguments:
 
+- **zlib encoding (compression)**:
+  The `-e` flag activates encoding using [`zlib`](https://www.zlib.net]).
+  Use the `-l` flag to specify the encoding level (default is 3). This is used for all data variables.
+
 - **Specify Output Path**:
   Use the `--output` or `-o` flag to specify a custom path for the output `.nc` file:
 
   ```bash
-  zarr2netcdf path_to_your_file.zarr --output path_to_output_file.netcdf
+  zarr2netcdf path_to_your_file.zarr --output=path_to_output_file.netcdf
   ```
 
   If not provided, the output will have the same name as the input with a `.nc` extension.
 
-- **Disable Dask Parallelization**:
-  Use the `--disable_dask` or `-n` flag to disable `dask` parallelization and the progress bar:
+- **Use Dask Parallelization**:
+  Use the `--use_dask` or `-d` flag to enable `dask` parallelization and the progress bar:
 
   ```bash
-  zarr2netcdf path_to_your_file.zarr --disable_dask
+  zarr2netcdf path_to_your_file.zarr -d
   ```
