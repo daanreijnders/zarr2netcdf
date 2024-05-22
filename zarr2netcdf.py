@@ -51,9 +51,9 @@ def zarr_to_netcdf(zarr_path, output_path=None, use_dask=False, verbose=False, e
     # Save the xarray dataset as a netCDF (.nc) file with progress bar
     if use_dask:
         with ProgressBar():
-            ds.to_netcdf(output_path, compute=True, enconding=encoding_dict)
+            ds.to_netcdf(output_path, compute=True, encoding=encoding_dict)
     else:
-        ds.to_netcdf(output_path, enconding=encoding_dict)
+        ds.to_netcdf(output_path, encoding=encoding_dict)
 
     if verbose:
         print(f"Converted {zarr_path} to {output_path}")
